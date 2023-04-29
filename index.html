@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palavras</title>
+
+    <style>
+        .comandos{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0 auto;
+            width: 400px;
+        }
+        #texto{
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            border-radius: 6px;
+            color: white;
+            background-color: black;
+        }
+        .resultado{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 20px auto;
+            padding: 20px;
+            width: 340px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <section class="comandos">
+        <textarea id="texto"></textarea>
+        <button onclick="contar()">Contar</button>
+    </section>
+
+    <div class="resultado" id="resultado"></div>
+    
+    <script>
+        let texto = document.querySelector("#texto");
+        let resultado = document.querySelector("#resultado");
+
+        texto.addEventListener("keypress", function() {
+            contar();
+        });
+
+        function contar(){
+            textocaracteres = texto.value.length;
+            console.log(textocaracteres);
+            resultado.innerText = "";
+            resultado.insertAdjacentHTML("beforeend", "Caracteres + Espaço: " + textocaracteres);
+        }
+    </script>
+
+</body>
+</html>

@@ -19,12 +19,6 @@
             height: 300px;
             margin-bottom: 10px;
         }
-        button{
-            padding: 10px 20px;
-            border-radius: 6px;
-            color: white;
-            background-color: black;
-        }
         .resultado{
             display: flex;
             flex-direction: column;
@@ -41,26 +35,60 @@
 <body>
 
     <section class="comandos">
-        <textarea id="texto"></textarea>
-        <button onclick="contar()">Contar</button>
+        <textarea id="texto" onkeyup="contar()"></textarea>
     </section>
 
     <div class="resultado" id="resultado"></div>
     
     <script>
+        //variaveis capturar texto e area do resultado
         let texto = document.querySelector("#texto");
         let resultado = document.querySelector("#resultado");
 
-        texto.addEventListener("keypress", function() {
-            contar();
-        });
+        //variaveis para resultado
+        let palavras = 0;
+        let caracteres = 0;
+        let letras = 0;
+        let espaco = 0;
+        let numeros = 0;
+        let simbolos = 0;
 
         function contar(){
-            textocaracteres = texto.value.length;
-            console.log(textocaracteres);
+            
+            //palavras
+            if(texto.value != ""){
+                palavras = texto.value.trim();
+                palavras = palavras.split(" ");
+                palavras = palavras.length;
+            }else{
+                palavras = 0;
+            }
+
+            //caracteres
+            caracteres = texto.value.length;
+
+            //letras
+            letras = texto.value.trim();
+            letras = letras.replace(/[^a-zA-Z]/g, '');
+            letras = letras.length;
+
+            //espacos
+            espaco = texto.value.split(" ").length - 1;
+
+            //numeros
+            numeros = texto.value.trim();
+            numeros = numeros.replace(/[^0-9]/g, '');
+            numeros = numeros.length;
+
+            //simbolos
+            simbolos = caracteres - (letras + espaco + numeros);
+
+            //mostrar resultado
             resultado.innerText = "";
-            resultado.insertAdjacentHTML("beforeend", "Caracteres + Espaço: " + textocaracteres);
+            resultado.insertAdjacentHTML("beforeend", "Palavras: " + palavras + "<br>Caracteres + Espaço: " + caracteres + "<br>Letras: " + letras + "<br>Espaço: " + espaco + "<br>Números: " + numeros + "<br>Simbolos: " + simbolos);
         }
+
+        contar();
     </script>
 
 </body>

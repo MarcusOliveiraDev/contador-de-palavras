@@ -16,4 +16,4 @@ Há várias razões pelas quais o Contador de Palavras Online é uma ferramenta 
 Experimente o Contador de Palavras Online Agora</li>
 </ul>
 
-Acesse o projeto online em: https://marcusoliveiradev.github.io/contador-de-palavras/ e experimente a facilidade de usar nosso contador de palavras para tornar seu trabalho mais eficiente e preciso! Com essa ferramenta, você pode facilmente verificar o número de caracteres de um texto antes de submetê-lo a uma avaliação, ou simplesmente ter uma ideia do tamanho do seu trabalho. Conte conosco para ter uma contagem precisa de caracteres e linhas.
+Acesse o projeto online em: https://marcusoliveiradev.com.br/contador-de-palavras-online/ e experimente a facilidade de usar nosso contador de palavras para tornar seu trabalho mais eficiente e preciso! Com essa ferramenta, você pode facilmente verificar o número de caracteres de um texto antes de submetê-lo a uma avaliação, ou simplesmente ter uma ideia do tamanho do seu trabalho. Conte conosco para ter uma contagem precisa de caracteres e linhas.
